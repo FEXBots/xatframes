@@ -1,0 +1,146 @@
+<!-- Floating circles credit: https://codepen.io/Mr_Smith/pen/YPLoKW -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #0C2853;
+}
+
+@-webkit-keyframes backgroundAnimate {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+@-moz-keyframes backgroundAnimate {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+@-o-keyframes backgroundAnimate {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+@keyframes backgroundAnimate {
+  from {
+    left: 0;
+    top: 0;
+  }
+  to {
+    left: -10000px;
+    top: -2000px;
+  }
+}
+
+#back {
+  background: url("https://i.imgur.com/JnxXqo6.png") repeat 20% 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+  z-index: -1;
+  -webkit-animation-name: backgroundAnimate;
+  -webkit-animation-duration: 500s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: backgroundAnimate;
+  -moz-animation-duration: 5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-name: backgroundAnimate;
+  -o-animation-duration: 500s;
+  -o-animation-timing-function: linear;
+  -o-animation-iteration-count: infinite;
+  animation-name: backgroundAnimate;
+  animation-duration: 500s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#front {
+  background: url("https://i.imgur.com/T5PWHss.png") repeat 35% 35%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  z-index: -1;
+  -webkit-animation-name: backgroundAnimate;
+  -webkit-animation-duration: 300s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: backgroundAnimate;
+  -moz-animation-duration: 300s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-name: backgroundAnimate;
+  -o-animation-duration: 300s;
+  -o-animation-timing-function: linear;
+  -o-animation-iteration-count: infinite;
+  animation-name: backgroundAnimate;
+  animation-duration: 300s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+table.table {
+	color: #FFFFFF;
+	position: fixed;
+	top: 20%;
+	bottom: 50%;
+	margin:auto;
+	text-align:center;
+	background-color:rgba(0,0,0,0.6);
+	border:1px solid black;
+	-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 2px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 2px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+</style>
+</head>
+<div id="back"></div>
+<div id="front"></div>
+<table class="table">
+<tr>
+<td>Hi, I'm Jadiction; AKA Jad.</td>
+</tr>
+<tr>
+<td>I'm the Developer of FEXBots.<img src="https://i.imgur.com/k4fUawx.png" style="vertical-align: middle; width: 30px;"/></td>
+</tr>
+<tr>
+<td>I sell xats - $2.5/1,000 xats.</td>
+</tr>
+<tr>
+<td>I'm best contacted through Discord.</td>
+</tr>
+<tr>
+<td><img src="https://discord.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg" style="vertical-align: middle; width:100px;" /> - https://discord.gg/hKNvDYU</td>
+</tr>
+</table>
+</html>
