@@ -154,6 +154,66 @@
 
     // inner firework
     for(let i = 0; i < PARTICLES_PER_FIREWORK; i++) {
+<canvas style="position: absolute; width: 100%; height: 100%; z-index: -1;" id="canvas"></canvas>
+<script>
+  // Credit: https://codepen.io/rukouen/pen/NbrOag
+  const PARTICLES_PER_FIREWORK = 150; // 100 - 400 or try 1000
+  const FIREWORK_CHANCE = 0.02; // percentage, set to 0 and click instead
+  const BASE_PARTICLE_SPEED = 0.6; // between 0-4, controls the size of the overall fireworks
+  const FIREWORK_LIFESPAN = 600; // ms
+  const PARTICLE_INITIAL_SPEED = 4.5; // 2-8
+  const GRAVITY = 5;
+
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  let particles = [];
+  var disableAutoFireworks = false;
+  let resetDisable = 0;
+
+  let loop = () => {
+
+    if(!disableAutoFireworks && Math.random() < FIREWORK_CHANCE) {
+      createFirework();
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((particle, i) => {
+      particle.animate();
+      particle.render();
+      if(particle.y > canvas.height
+        || particle.x < 0
+        || particle.x > canvas.width
+        || particle.alpha <= 0
+      ) {
+        particles.splice(i, 1);
+      }
+    });
+
+    requestAnimationFrame(loop);
+
+  };
+
+  let createFirework = (
+    x = Math.random() * canvas.width,
+    y = Math.random() * canvas.height
+  ) => {
+
+    let speed = (Math.random() * 2) + BASE_PARTICLE_SPEED;
+    let maxSpeed = speed;
+
+    let red = ~~(Math.random() * 255);
+    let green = ~~(Math.random() * 255);
+    let blue = ~~(Math.random() * 255);
+
+    // use brighter colours
+    red = (red < 150 ? red + 150 : red);
+    green = (green < 150 ? green + 150 : green);
+    blue = (blue < 150 ? blue + 150 : blue);
+
+    // inner firework
+    for(let i = 0; i < PARTICLES_PER_FIREWORK; i++) {
       let particle = new Particle(x, y, red, green, blue, speed);
       particles.push(particle);
 
